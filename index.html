@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InstaScan demo</title>
-    <link href="js/instascan/styles.css" type="text/css" rel="stylesheet" />
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <script src="js/instascan/instascan.min.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="scanner-header">
-        <label id="lblScannerHeader">Header</label>
+        <label id="lblScannerHeader"><h3>InstScan demo</h3></label>
     </div>
     <div class="scanner-form">
+        <div id="scannerCameras"><h4>List of detected cameras:</h4>
+            <div id="camerasList"></div>
+        </div>
         <form id="frmScanner">
             <video id="scannerVideoPreview" class="scanner-video-preview"></video>
             <div>
@@ -24,7 +27,7 @@
         </form>
     </div>
     <div class="scanner-footer">
-        <label id="lblScannerFooter">Footer</label>
+        <label id="lblScannerFooter"><i>Footer</i></label>
     </div>
     <img id="imgLoading" alt="loading" src="js/instascan/loading-bar.gif" class="centered-img" />
     <img id="imgSuccess" alt="success" src="js/instascan/success.png" class="centered-img" />
