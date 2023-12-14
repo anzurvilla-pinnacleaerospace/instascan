@@ -5,6 +5,7 @@ const btnStartScanning = document.getElementById("btnStartScanning");
 const btnStopScanning = document.getElementById("btnStopScanning");
 const btnSwitchScanning = document.getElementById("btnSwitchCamera");
 const scanMessage = document.getElementById("scanMessage");
+const camerasList = document.getElementById("camerasList");
 
 const imgLoading = document.getElementById("imgLoading");
 const imgSuccess = document.getElementById("imgSuccess");
@@ -63,7 +64,9 @@ scanner.addListener("active", () => {
   btnStopScanning.disabled = false;
   audio.src = "scanner-started-sound.mp3";
   audio.play();
-  scanMessage.innerHTML = "Scanner is active.";
+  scanMessage.innerHTML = `Scanner is active. (camera #${
+    selectedCamera + 1
+  } of ${loadedCameras.length})`;
   scannerVideoPreview.style.backgroundColor = blueColor;
   setTimeout(function () {
     imgLoading.style.display = "none";
@@ -88,6 +91,8 @@ Instascan.Camera.getCameras()
     imgLoading.style.display = "block";
     if (cameras.length > 0) {
       loadedCameras = cameras;
+      console.log("Number of cameras:", loadedCameras.length);
+      camerasList.innerHTML = JSON.stringify(loadedCameras);
       if (cameras.length > 1) btnSwitchScanning.disabled = false;
       else btnSwitchScanning.disabled = false;
       scanner.start(cameras[selectedCamera]);
@@ -131,9 +136,10 @@ function stopScanner() {
 function switchCamera() {
   if (scanner != null) {
     if (loadedCameras && loadedCameras.length > 0) {
-      if (selectedCamera < loadedCameras.length) {
+      if (selectedCamera < loadedCameras.length - 1) {
         selectedCamera++;
       } else selectedCamera = 0;
+      scanMessage.innerHTML = `Selected camera: ${selectedCamera}`;
       scanner.start(loadedCameras[selectedCamera]);
     } else {
       alert("No cameras found");
