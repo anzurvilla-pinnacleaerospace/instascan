@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaScan demo</title>
+    <link href="js/instascan/styles.css" type="text/css" rel="stylesheet" />
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/instascan/instascan.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="scanner-header">
+        <label id="lblScannerHeader">Header</label>
+    </div>
+    <div class="scanner-form">
+        <form id="frmScanner">
+            <video id="scannerVideoPreview" class="scanner-video-preview"></video>
+            <div>
+                <input type="button" id="btnSwitchCamera" value="Switch Camera" class="scanner-button scanner-switch-button" onclick="switchCamera();" disabled="disabled" />
+                <input type="button" id="btnStartScanning" value="Start Scanning" class="scanner-button scanner-start-button" onclick="startScanner();" disabled="disabled" />
+                <input type="button" id="btnStopScanning" value="Stop Scanning" class="scanner-button scanner-stop-button" onclick="stopScanner();" disabled="disabled" />
+            </div>
+            <div id="scanMessage" class="scan-message"></div>
+        </form>
+    </div>
+    <div class="scanner-footer">
+        <label id="lblScannerFooter">Footer</label>
+    </div>
+    <img id="imgLoading" alt="loading" src="js/instascan/loading-bar.gif" class="centered-img" />
+    <img id="imgSuccess" alt="success" src="js/instascan/success.png" class="centered-img" />
+    <img id="imgError" alt="error" src="js/instascan/error.png" class="centered-img" />
+    <img id="imgWarning" alt="warning" src="js/instascan/warning.png" class="centered-img" />
+    <img id="imgWaiting" alt="waiting" src="js/instascan/waiting.png" class="centered-img" />
+
+    <script src="js/index.js" type="text/javascript"></script>
+</body>
+</html>

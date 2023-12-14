@@ -1,0 +1,71 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.scanner-header, .scanner-footer {
+    align-items: center;
+    text-align: center;
+}
+.scanner-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*height: 100%;*/
+    text-align: center;
+    white-space: normal;
+}
+.scanner-video-preview {
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    border-width: 10px !important;
+    padding: 5px;
+    margin: 5px;
+    height: 55vh;
+    width: 55vw;
+}
+.scanner-button {
+    margin: 10px;
+    padding: 10px;
+    height:7vh;
+    width: 20vw;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 1vw;
+    background-size: 5vh auto;
+}
+.scanner-button:disabled {
+    background-color: #f0f0f0;
+    background-image: none;
+    border-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+}
+.scanner-button:disabled img {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+.scanner-start-button {
+    background-image: url('../js/instascan/start.png');
+}
+.scanner-stop-button {
+    background-image: url('../js/instascan/stop.png');
+}
+.scanner-switch-button {
+    background-image: url('../js/instascan/switch.png');
+}
+.scan-message {
+    font-size: large;
+    margin: 10px;
+    width: 90%;
+    overflow-wrap: break-word;
+}
+.centered-img {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
