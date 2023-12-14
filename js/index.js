@@ -94,7 +94,7 @@ Instascan.Camera.getCameras()
       console.log("Number of cameras:", loadedCameras.length);
       camerasList.innerHTML = JSON.stringify(loadedCameras);
       if (cameras.length > 1) btnSwitchScanning.disabled = false;
-      else btnSwitchScanning.disabled = false;
+      else btnSwitchScanning.disabled = true;
       scanner.start(cameras[selectedCamera]);
     } else {
       alert("No cameras found");
@@ -157,6 +157,7 @@ function sendCode(scanContent) {
   scannerVideoPreview.style.backgroundColor = greenColor;
 
   setTimeout(function () {
+    imgLoading.style.display = "none";
     scannerVideoPreview.style.backgroundColor = blueColor;
     scanMessage.innerHTML = "Last code scanned successfully: " + scanContent;
     imgSuccess.style.display = "none";
